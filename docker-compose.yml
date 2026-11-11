@@ -1,0 +1,12 @@
+services:
+  sahachar:
+    build: .
+    ports:
+      - "8500:8500"
+    env_file:
+      - .env
+    environment:
+      PORT: 8500
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

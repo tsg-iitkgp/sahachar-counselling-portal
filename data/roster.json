@@ -1,0 +1,362 @@
+[
+  {
+    "hall": "Lalbahadur Shastri Hall",
+    "day": "Monday",
+    "counsellor": "Azwar",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Lalbahadur Shastri Hall",
+    "day": "Wednesday",
+    "counsellor": "Sreyoshi",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Lalbahadur Shastri Hall",
+    "day": "Thursday",
+    "counsellor": "Titasa",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Lalbahadur Shastri Hall",
+    "day": "Saturday",
+    "counsellor": "Azwar",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Madan Mohan Malaviya Hall",
+    "day": "Monday",
+    "counsellor": "Sreyoshi",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Madan Mohan Malaviya Hall",
+    "day": "Wednesday",
+    "counsellor": "Pallabi",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Madan Mohan Malaviya Hall",
+    "day": "Saturday",
+    "counsellor": "Azwar",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Madan Mohan Malaviya Hall",
+    "day": "Sunday",
+    "counsellor": "Pallabi",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "B. R. Ambedkar Hall",
+    "day": "Monday",
+    "counsellor": "Pallabi",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "B. R. Ambedkar Hall",
+    "day": "Wednesday",
+    "counsellor": "Sreyoshi",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "B. R. Ambedkar Hall",
+    "day": "Thursday",
+    "counsellor": "Sreyoshi",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "B. R. Ambedkar Hall",
+    "day": "Sunday",
+    "counsellor": "Azwar",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Sister Nivedita Hall",
+    "day": "Wednesday",
+    "counsellor": "Titasa",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Sister Nivedita Hall",
+    "day": "Friday",
+    "counsellor": "Sanjeevani",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Sister Nivedita Hall",
+    "day": "Sunday",
+    "counsellor": "Sreyoshi",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Radha Krishnan Hall",
+    "day": "Tuesday",
+    "counsellor": "Pallabi",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Radha Krishnan Hall",
+    "day": "Friday",
+    "counsellor": "Sanjeevani",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Radha Krishnan Hall",
+    "day": "Sunday",
+    "counsellor": "Sanjeevani",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Rajendra Prasad Hall",
+    "day": "Tuesday",
+    "counsellor": "Titasa",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Rajendra Prasad Hall",
+    "day": "Friday",
+    "counsellor": "Titasa",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Rajendra Prasad Hall",
+    "day": "Sunday",
+    "counsellor": "Azwar",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Azad Hall",
+    "day": "Monday",
+    "counsellor": "Sreyoshi",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Azad Hall",
+    "day": "Wednesday",
+    "counsellor": "Azwar",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Patel Hall",
+    "day": "Tuesday",
+    "counsellor": "Azwar",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Patel Hall",
+    "day": "Thursday",
+    "counsellor": "Sreyoshi",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Atal Bihari Vajpayee Hall",
+    "day": "Thursday",
+    "counsellor": "Sanjeevani",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Atal Bihari Vajpayee Hall",
+    "day": "Saturday",
+    "counsellor": "Anindita",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Atal Bihari Vajpayee Hall",
+    "day": "Sunday",
+    "counsellor": "Sanjeevani",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Meghnad Saha Hall",
+    "day": "Wednesday",
+    "counsellor": "Anindita",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Savitribai Phule Hall 1",
+    "day": "Monday",
+    "counsellor": "Sanjeevani",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Savitribai Phule Hall 1",
+    "day": "Tuesday",
+    "counsellor": "Pallabi",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Savitribai Phule Hall 1",
+    "day": "Saturday",
+    "counsellor": "Anindita",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Savitribai Phule Hall 2",
+    "day": "Thursday",
+    "counsellor": "Pallabi",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Savitribai Phule Hall 2",
+    "day": "Saturday",
+    "counsellor": "Titasa",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Savitribai Phule Hall 2",
+    "day": "Sunday",
+    "counsellor": "Anindita",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Mother Teresa Hall",
+    "day": "Monday",
+    "counsellor": "Sanjeevani",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Mother Teresa Hall",
+    "day": "Wednesday",
+    "counsellor": "Titasa",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Mother Teresa Hall",
+    "day": "Saturday",
+    "counsellor": "Sanjeevani",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Nehru Hall",
+    "day": "Tuesday",
+    "counsellor": "Anindita",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Nehru Hall",
+    "day": "Wednesday",
+    "counsellor": "Azwar",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Sarojini Naidu & Indira Gandhi Hall",
+    "day": "Monday",
+    "counsellor": "Anindita",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Sarojini Naidu & Indira Gandhi Hall",
+    "day": "Tuesday",
+    "counsellor": "Titasa",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Rani Laxmibai Hall",
+    "day": "Wednesday",
+    "counsellor": "Anindita",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Rani Laxmibai Hall",
+    "day": "Thursday",
+    "counsellor": "Pallabi",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Rani Laxmibai Hall",
+    "day": "Sunday",
+    "counsellor": "Anindita",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Vidyasagar Hall",
+    "day": "Monday",
+    "counsellor": "Pallabi",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Vidyasagar Hall",
+    "day": "Tuesday",
+    "counsellor": "Azwar",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Lala Lajpat Rai Hall",
+    "day": "Monday",
+    "counsellor": "Azwar",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Lala Lajpat Rai Hall",
+    "day": "Tuesday",
+    "counsellor": "Sreyoshi",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Lala Lajpat Rai Hall",
+    "day": "Sunday",
+    "counsellor": "Sreyoshi",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "VSRC\u20111",
+    "day": "Wednesday",
+    "counsellor": "Pallabi",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Homi J. Bhabha Hall",
+    "day": "Saturday",
+    "counsellor": "Sanjeevani",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "Gokhale Hall",
+    "day": "Sunday",
+    "counsellor": "Pallabi",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "J. C. Bose Hall",
+    "day": "Tuesday",
+    "counsellor": "Sreyoshi",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "J. C. Bose Hall",
+    "day": "Thursday",
+    "counsellor": "Titasa",
+    "window": "1 AM - 5 AM"
+  },
+  {
+    "hall": "B. C. Roy Hall",
+    "day": "Thursday",
+    "counsellor": "Sanjeevani",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "B. C. Roy Hall",
+    "day": "Friday",
+    "counsellor": "Titasa",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "VGH",
+    "day": "Tuesday",
+    "counsellor": "Anindita",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "VGH",
+    "day": "Saturday",
+    "counsellor": "Titasa",
+    "window": "8 PM - 12 AM"
+  },
+  {
+    "hall": "Zakir Hussain (If permitted)",
+    "day": "Monday",
+    "counsellor": "Anindita",
+    "window": "8 PM - 12 AM"
+  }
+]

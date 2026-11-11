@@ -1,0 +1,22 @@
+const $=x=>document.getElementById(x);
+let currentView="today";
+const esc=v=>String(v??"").replace(/[&<>\"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+const todayIST=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kolkata",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+function statusLabel(s){return ({BOOKED:"Scheduled",CHECKED_IN:"Checked In",IN_SESSION:"In Session",COMPLETED:"Completed",NO_SHOW:"No Show",CANCELLED:"Cancelled"}[s]||s);}
+function statusClass(s){return `status status-${String(s).toLowerCase()}`;}
+function actionHtml(b){
+ if(b.status==="BOOKED") return `<button class="small-btn" data-action="CHECKED_IN" data-id="${esc(b.booking_id)}">Check In</button>`;
+ if(b.status==="CHECKED_IN") return `<button class="small-btn" data-action="IN_SESSION" data-id="${esc(b.booking_id)}">Start Session</button><button class="small-btn" data-action="NO_SHOW" data-id="${esc(b.booking_id)}">No Show</button>`;
+ if(b.status==="IN_SESSION") return `<button class="small-btn" data-action="COMPLETED" data-id="${esc(b.booking_id)}">Complete</button>`;
+ return `<span class="muted">—</span>`;
+}
+async function check(){const r=await fetch("/api/counsellor/me");if(r.ok){const d=await r.json();$("login").style.display="none";$("dash").style.display="block";$("name").textContent=d.name;$("dateFilter").value=todayIST();await load();}}
+$("send").onclick=async()=>{const r=await fetch("/api/counsellor/request-otp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:$('email').value})});const d=await r.json();$('msg').textContent=d.message||d.error;if(r.ok)$('otpbox').style.display="flex"};
+$("verify").onclick=async()=>{const r=await fetch("/api/counsellor/verify-otp",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:$('email').value,code:$('otp').value})});if(r.ok)check();else $('msg').textContent=(await r.json()).error};
+async function loadSummary(){try{const r=await fetch("/api/counsellor/summary");if(!r.ok)throw new Error(`Summary request failed (${r.status})`);const d=await r.json();$('todayCount').textContent=d.today;$('upcomingCount').textContent=d.upcoming;$('completedCount').textContent=d.completedToday;$('noShowCount').textContent=d.noShowToday;}catch(e){console.error('[SAHACHAR] Summary load failed:',e);}}
+async function load(){await loadSummary();try{let url="/api/counsellor/bookings";if(currentView==="today")url+=`?date=${encodeURIComponent($('dateFilter').value||todayIST())}`;else url+="?range=upcoming";const r=await fetch(url);if(!r.ok)throw new Error(`Bookings request failed (${r.status})`);const rows=await r.json();$('empty').style.display=rows.length?"none":"block";$('rows').innerHTML=rows.map(b=>`<tr><td>${esc(b.date)}<br><small>${esc(b.day)}</small></td><td><b>${esc(b.start_time)}–${esc(b.end_time)}</b></td><td>${esc(b.hall)}</td><td>${esc(b.student_name)}</td><td>${esc(b.roll_number)}</td><td>${esc(b.department)}${b.year?`<br><small>Year ${esc(b.year)}</small>`:""}</td><td><span class="${statusClass(b.status)}">${statusLabel(b.status)}</span></td><td>${actionHtml(b)}</td></tr>`).join("");}catch(e){console.error('[SAHACHAR] Booking load failed:',e);$('rows').innerHTML='';$('empty').style.display='block';$('empty').textContent='Unable to load appointments. Please refresh the page.';}}
+$('rows').onclick=async e=>{const btn=e.target.closest('[data-action]');if(!btn)return;const action=btn.dataset.action;const id=btn.dataset.id;btn.disabled=true;const r=await fetch(`/api/counsellor/bookings/${encodeURIComponent(id)}/status`,{method:"PATCH",headers:{"Content-Type":"application/json"},body:JSON.stringify({status:action})});if(!r.ok){const d=await r.json();alert(d.error||"Could not update appointment.");btn.disabled=false;return;}await load();};
+$('todayBtn').onclick=()=>{currentView="today";$('dateFilter').value=todayIST();$('todayBtn').classList.add('primary');$('upcomingBtn').classList.remove('primary');load()};$('upcomingBtn').onclick=()=>{currentView="upcoming";$('todayBtn').classList.remove('primary');$('upcomingBtn').classList.add('primary');load()};$('dateFilter').onchange=()=>{currentView="today";load()};
+$('logout').onclick=async()=>{await fetch("/api/counsellor/logout",{method:"POST"});location.reload()};
+if("Notification"in window&&Notification.permission==="default")Notification.requestPermission();
+check();setInterval(load,30000);
