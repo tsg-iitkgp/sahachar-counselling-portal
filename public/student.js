@@ -32,9 +32,10 @@ function toAppointment(){
 }
 async function refreshHalls(){
  const date=$('date').value,select=$('hall'); const previous=select.value; select.innerHTML='<option value="">Select hall</option>'; chosen=null; $('toConfirm').disabled=true;
- if(!date){$('availability').textContent='Select a date to see halls with rostered counselling availability.';return;}
- const r=await fetch(`api/availability?date=${encodeURIComponent(date)}`),data=await r.json();
- const halls=[...new Set(data.slots.map(x=>x.hall))].sort((a,b)=>a.localeCompare(b)); [...new Set([...(meta.halls||[]),...halls])].sort((a,b)=>a.localeCompare(b)).forEach(h=>{const o=document.createElement('option');const ok=halls.includes(h);o.value=h;o.textContent=ok?h:h+' (no counsellor this day)';o.disabled=!ok;select.appendChild(o)});
+ const fill=(avail)=>{[...new Set([...(meta.halls||[]),...avail])].sort((a,b)=>a.localeCompare(b)).forEach(h=>{const o=document.createElement('option');const ok=avail.includes(h);o.value=h;o.textContent=ok?h:h+' (no counsellor this day)';o.disabled=!!date&&!ok;select.appendChild(o)})};
+ if(!date){select.innerHTML='<option value="">Choose a date first</option>';select.disabled=true;$('availability').textContent='Select a date to see halls with rostered counselling availability.';return;}
+ select.disabled=false;let data={slots:[],day:''};try{const r=await fetch(`api/availability?date=${encodeURIComponent(date)}`);const j=await r.json();if(Array.isArray(j.slots))data=j}catch(e){}
+ const halls=[...new Set(data.slots.map(x=>x.hall))].sort((a,b)=>a.localeCompare(b)); fill(halls);
  if(halls.includes(previous))select.value=previous; else if(halls.length===1)select.value=halls[0];
  $('availability').textContent=halls.length?`${halls.length} hall${halls.length===1?'':'s'} have rostered availability on ${data.day}.`:`No counselling locations are rostered for ${data.day}.`;
  if(select.value)load();
