@@ -36,6 +36,7 @@ function counsellorEmailFor(name){
   return row?.email || "";
 }
 
+app.set("trust proxy",1);
 app.use(helmet({contentSecurityPolicy:false}));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
