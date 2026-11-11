@@ -34,7 +34,7 @@ async function refreshHalls(){
  const date=$('date').value,select=$('hall'); const previous=select.value; select.innerHTML='<option value="">Select hall</option>'; chosen=null; $('toConfirm').disabled=true;
  if(!date){$('availability').textContent='Select a date to see halls with rostered counselling availability.';return;}
  const r=await fetch(`api/availability?date=${encodeURIComponent(date)}`),data=await r.json();
- const halls=[...new Set(data.slots.map(x=>x.hall))].sort((a,b)=>a.localeCompare(b)); halls.forEach(h=>{const o=document.createElement('option');o.value=h;o.textContent=h;select.appendChild(o)});
+ const halls=[...new Set(data.slots.map(x=>x.hall))].sort((a,b)=>a.localeCompare(b)); [...new Set([...(meta.halls||[]),...halls])].sort((a,b)=>a.localeCompare(b)).forEach(h=>{const o=document.createElement('option');const ok=halls.includes(h);o.value=h;o.textContent=ok?h:h+' (no counsellor this day)';o.disabled=!ok;select.appendChild(o)});
  if(halls.includes(previous))select.value=previous; else if(halls.length===1)select.value=halls[0];
  $('availability').textContent=halls.length?`${halls.length} hall${halls.length===1?'':'s'} have rostered availability on ${data.day}.`:`No counselling locations are rostered for ${data.day}.`;
  if(select.value)load();
